@@ -4,14 +4,19 @@ import mongoose from "mongoose"
 import {DB_NAME} from "./constants.js";
 import express from "express"
 import connectDB from "./db/index.js"
-
+import { ExternalLinkIcon } from "lucide-react";
 
 connectDB()
-
-
-
-
-
+.then(()=>{
+    app.listen(process.env.PORT || 8000,()=>{
+        console.log(`server is running at port : ${process.env.PORT}`)
+    })
+})
+.catch((err)=>{
+    console.log("MONGO DB CONNECTION ERROR : ",err)
+    throw(err);
+    process.exit(1);
+})
 
 /*const app=express()
 function connectDB(){}

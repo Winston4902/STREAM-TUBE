@@ -13,3 +13,13 @@ const connectDB = async () => {
 }
 
 export default connectDB
+/*
+connection instance looks kinda like this
+{
+   connection: {
+      host: "localhost",
+      port: 27017,
+      name: "videotube"
+   }
+}
+*/
